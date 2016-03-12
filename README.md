@@ -5,9 +5,11 @@ A straight forward to use, simple image gallery.
 
 ## Features
 
-* Layouting (google images style)
-* Lazy loading (via `data-full-src`)
+* Automatic image layouting (google images style)
+* Lazy loading of full size images (via `data-full-src`)
 * Responsive
+
+[View Demo](https://rawgit.com/nikku/image-gallery/master/test/test.html).
 
 
 ## Usage
@@ -35,9 +37,9 @@ Wrap your images inside a `.image-gallery` container:
 </div>
 ```
 
-Instantiate the gallery:
+Instantiate the gallery for one or more container elements:
 
-```javascript
+```html
 <script type="text/javascript">
   var gallery = ImageGallery('.image-gallery', {
     use: [
