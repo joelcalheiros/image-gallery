@@ -12,14 +12,28 @@
 </head>
 <body>
 
-  <div class="image-gallery one" style="max-width: 500px;">
-    <img src="fixtures/1-small.jpg" data-full-src="fixtures/1-large.jpg">
-    <img src="fixtures/2-small.jpg" data-full-src="fixtures/2-large.jpg">
-    <img src="fixtures/3-small.jpg" data-full-src="fixtures/3-large.jpg">
-    <img src="fixtures/4-small.png" data-full-src="fixtures/4-large.png">
+  <script src="../dist/image-gallery.js"></script>
+
+  <p>responsive (try resize):</p>
+
+  <div class="image-gallery default" style="max-width: 600px;">
+    <img src="fixtures/1-small.jpg">
+    <img src="fixtures/2-small.jpg">
+    <img src="fixtures/3-small.jpg">
+    <img src="fixtures/4-small.png">
   </div>
 
-  <div class="image-gallery two" style="max-width: 400px">
+  <script>
+    ImageGallery('.default', {
+      use: [
+        ImageGallery.Responsive
+      ]
+    });
+  </script>
+
+  <p>various options, including custom dimensions override (3):</p>
+
+  <div class="image-gallery options" style="max-width: 600px">
     <img src="fixtures/1-small.jpg" data-full-src="fixtures/1-large.jpg">
     <!--
       data-full-src is optional
@@ -32,35 +46,61 @@
     <img src="fixtures/3-small.jpg" data-dimensions="400,100" data-full-src="fixtures/3-large.jpg">
   </div>
 
-  <div class="image-gallery three" style="margin-top: 300px; max-width: 800px">
+  <script>
+    ImageGallery('.options', {
+      use: [
+        ImageGallery.LazyLoading
+      ]
+    });
+  </script>
+
+
+  <p style="margin-top: 300px;">lazy loading of full size images (when entering viewport):</p>
+
+  <div class="image-gallery lazy-loading" style="max-width: 800px">
     <img src="http://unsplash.it/30/20?image=940" data-full-src="http://unsplash.it/600/400?image=940">
     <img src="http://unsplash.it/32/22?image=906" data-full-src="http://unsplash.it/640/450?image=906">
     <img src="http://unsplash.it/27/21?image=885" data-full-src="http://unsplash.it/550/420?image=885">
     <img src="http://unsplash.it/30/17?image=815" data-full-src="http://unsplash.it/600/350?image=815">
   </div>
 
-  <div class="four">
-    <img src="http://unsplash.it/30/20?image=940" data-full-src="http://unsplash.it/600/400?image=940">
-  </div>
-
-  <script type="text/javascript" src="../dist/image-gallery.js"></script>
-
-  <script type="text/javascript">
-    ImageGallery('.one, .two, .three', {
+  <script>
+    ImageGallery('.lazy-loading', {
       use: [
         ImageGallery.LazyLoading,
         ImageGallery.Responsive
-      ],
-      // optional
-      selectors: {
-        // default
-        image: 'img'
-      }
+      ]
     });
   </script>
 
-  <script type="text/javascript">
-    ImageGallery('.four');
+
+  <p>single portrait image (with image-height=inherit):</p>
+
+  <div class="image-gallery single-portrait-image" style="height: 400px" data-image-height="inherit">
+    <img src="fixtures/4-small.png" data-full-src="fixtures/4-large.png">
+  </div>
+
+  <script>
+    ImageGallery('.single-portrait-image');
+  </script>
+
+
+  <p>custom image selectors:</p>
+
+  <div class="custom-selector">
+    <div class="images">
+      <img src="http://unsplash.it/30/20?image=940" data-full-src="http://unsplash.it/600/400?image=940">
+    </div>
+
+    <img src="file:///home/nikku/Projects/image-gallery/test/fixtures/2-small.jpg">
+  </div>
+
+  <script>
+    ImageGallery('.custom-selector', {
+      selectors: {
+        image: '.images img'
+      }
+    });
   </script>
 </body>
 </html>
