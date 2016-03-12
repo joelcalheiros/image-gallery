@@ -12,14 +12,14 @@
 </head>
 <body>
 
-  <div class="image-gallery" style="max-width: 500px;">
+  <div class="image-gallery one" style="max-width: 500px;">
     <img src="fixtures/1-small.jpg" data-full-src="fixtures/1-large.jpg">
     <img src="fixtures/2-small.jpg" data-full-src="fixtures/2-large.jpg">
     <img src="fixtures/3-small.jpg" data-full-src="fixtures/3-large.jpg">
     <img src="fixtures/4-small.png" data-full-src="fixtures/4-large.png">
   </div>
 
-  <div class="image-gallery" style="max-width: 400px">
+  <div class="image-gallery two" style="max-width: 400px">
     <img src="fixtures/1-small.jpg" data-full-src="fixtures/1-large.jpg">
     <!--
       data-full-src is optional
@@ -32,18 +32,21 @@
     <img src="fixtures/3-small.jpg" data-dimensions="400,100" data-full-src="fixtures/3-large.jpg">
   </div>
 
-  <div class="image-gallery" style="margin-top: 300px; max-width: 800px">
+  <div class="image-gallery three" style="margin-top: 300px; max-width: 800px">
     <img src="http://unsplash.it/30/20?image=940" data-full-src="http://unsplash.it/600/400?image=940">
     <img src="http://unsplash.it/32/22?image=906" data-full-src="http://unsplash.it/640/450?image=906">
     <img src="http://unsplash.it/27/21?image=885" data-full-src="http://unsplash.it/550/420?image=885">
     <img src="http://unsplash.it/30/17?image=815" data-full-src="http://unsplash.it/600/350?image=815">
   </div>
 
+  <div class="four">
+    <img src="http://unsplash.it/30/20?image=940" data-full-src="http://unsplash.it/600/400?image=940">
+  </div>
 
   <script type="text/javascript" src="../dist/image-gallery.js"></script>
 
   <script type="text/javascript">
-    var gallery = ImageGallery('.image-gallery', {
+    ImageGallery('.one, .two, .three', {
       use: [
         ImageGallery.LazyLoading,
         ImageGallery.Responsive
@@ -54,6 +57,10 @@
         image: 'img'
       }
     });
+  </script>
+
+  <script type="text/javascript">
+    ImageGallery('.four');
   </script>
 </body>
 </html>
