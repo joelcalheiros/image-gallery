@@ -1,0 +1,12 @@
+.image-gallery img {
+  float: left;
+}
+.image-gallery img:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+.image-gallery:after {
+  content: '';
+  display: table;
+  clear: both;
+}
