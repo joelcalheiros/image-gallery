@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint lib/*.js",
-    "js": "browserify index.js --igv global -s ImageGallery | derequire | uglifyjs -cm > dist/image-gallery.js ",
+    "js": "browserify index.js --igv global -p bundle-collapser/plugin -s ImageGallery | derequire | uglifyjs -cm > dist/image-gallery.js ",
     "less": "lessc style.less dist/image-gallery.css",
     "watch:js": "watchify index.js -v -d --igv global -o dist/image-gallery.js -s ImageGallery",
     "all": "npm run lint && npm run js && npm run less"
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
+    "bundle-collapser": "^1.2.1",
     "derequire": "^2.0.3",
     "eslint": "^2.4.0",
     "less": "^2.6.1",
