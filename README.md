@@ -8,6 +8,7 @@ A straight forward to use, simple image gallery.
 * Automatic image layouting (google images style)
 * Lazy loading of full size images (via `data-full-src`)
 * Responsive
+* Lightbox (optional)
 
 [View Demo](https://rawgit.com/nikku/image-gallery/master/test/test.html).
 
@@ -49,6 +50,11 @@ Instantiate the gallery for one or more container elements:
   });
 </script>
 ```
+
+
+## Extend (e.g. add Lightbox)
+
+You can easily integrate other components such as [a light box](https://github.com/nikku/image-gallery/blob/master/dist/image-gallery-lightbox.js).
 
 
 ## License
