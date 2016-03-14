@@ -1,12 +1,7 @@
 .image-gallery img {
-  float: left;
+  display: inline-block;
 }
 .image-gallery img:hover {
   filter: brightness(110%);
   -webkit-filter: brightness(110%);
-}
-.image-gallery:after {
-  content: '';
-  display: table;
-  clear: both;
 }
