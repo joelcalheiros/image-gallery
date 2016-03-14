@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint lib/*.js",
-    "js": "browserify index.js --igv global -p bundle-collapser/plugin -s ImageGallery | derequire | uglifyjs -cm > dist/image-gallery.js ",
+    "js": "browserify index.js --igv global -p bundle-collapser/plugin -s ImageGallery | derequire > dist/image-gallery.js",
+    "minify:js": "uglifyjs dist/image-gallery.js -cm > dist/image-gallery.min.js",
     "less": "lessc style.less dist/image-gallery.css",
     "watch:js": "watchify index.js -v -d --igv global -o dist/image-gallery.js -s ImageGallery",
-    "all": "npm run lint && npm run js && npm run less"
+    "all": "npm run lint && npm run js && npm run minify:js && npm run less"
   },
   "repository": {
     "type": "git",
