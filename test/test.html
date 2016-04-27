@@ -16,7 +16,7 @@
 
   <p>responsive (try resize):</p>
 
-  <div class="image-gallery default" style="max-width: 600px;">
+  <div class="image-gallery default" data-image-spacing="5" style="max-width: 600px;">
     <img src="fixtures/1-small.jpg">
     <img src="fixtures/2-small.jpg">
     <img src="fixtures/3-small.jpg">
@@ -33,7 +33,7 @@
 
   <p>various options, including custom dimensions override (3):</p>
 
-  <div class="image-gallery options" style="max-width: 600px">
+  <div class="image-gallery options" data-image-spacing="5" style="max-width: 600px">
     <img src="fixtures/1-small.jpg" data-full-src="fixtures/1-large.jpg">
     <!--
       data-full-src is optional
@@ -57,7 +57,7 @@
 
   <p style="margin-top: 300px;">lazy loading of full size images (when entering viewport):</p>
 
-  <div class="image-gallery lazy-loading" style="max-width: 800px">
+  <div class="image-gallery lazy-loading" data-image-spacing="5" style="max-width: 800px">
     <img src="http://unsplash.it/30/20?image=940" data-full-src="http://unsplash.it/600/400?image=940">
     <img src="http://unsplash.it/32/22?image=906" data-full-src="http://unsplash.it/640/450?image=906">
     <img src="http://unsplash.it/27/21?image=885" data-full-src="http://unsplash.it/550/420?image=885">
