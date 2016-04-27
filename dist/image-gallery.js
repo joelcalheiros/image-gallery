@@ -169,6 +169,10 @@ ImageGallery.prototype.createGallery = function($el, imageSelector) {
     }
 
     img.onload = function(e) {
+      // we loaded and are able to access the dimensions
+      // no need to trigger us again
+      delete img.onload;
+
       self.setImageDimensions(gallery, idx, getDimensions(img));
     };
 
